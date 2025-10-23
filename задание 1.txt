@@ -1,0 +1,43 @@
+using System;
+
+
+class Person
+{
+    private string name;
+    private int age;
+
+    public string Name { get { return name; } set { name = value; } }
+    public int Age
+    {
+        get { return age; }
+        set
+        {
+            if (value >= 1 && value <= 120)
+                age = value;
+            else
+                Console.WriteLine("Возраст должен быть от 1 до 120!");
+        }
+    }
+
+    public Person(string name, int age)
+    {
+        this.name = name;
+        this.age = age >= 1 && age <= 120 ? age : 1;
+    }
+
+    public void Introduce()
+    {
+        Console.WriteLine($"Привет, я {name}, мне {age} лет.");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Person person = new Person("Лиза", 19);
+        person.Introduce();
+        person.Introduce();
+        Console.ReadLine();
+    }
+}
