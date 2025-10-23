@@ -35,7 +35,7 @@ class Program
 {
     static void Main()
     {
-        Person person = new Person("Лиза", 19);
+        Person person = new Person("bob", 19);
         person.Introduce();
         person.Introduce();
         Console.ReadLine();
